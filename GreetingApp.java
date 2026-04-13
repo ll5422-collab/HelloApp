@@ -1,22 +1,21 @@
 public class GreetingApp {
     public static void main(String[] args) {
 
-        // If no arguments → default message
+        // Default case
         if (args.length == 0) {
             System.out.println("Hello, World!");
             return;
         }
 
-        // Print greeting using enhanced for loop
+        // Print greeting for multiple names
         System.out.print("Hello, ");
 
-        int count = 0;
-        for (String name : args) {
-            count++;
-            if (count == args.length) {
-                System.out.print(name); // last name (no comma)
-            } else {
-                System.out.print(name + ", ");
+        for (int i = 0; i < args.length; i++) {
+            System.out.print(args[i]);
+
+            // Add comma except for last name
+            if (i < args.length - 1) {
+                System.out.print(", ");
             }
         }
 
