@@ -1,15 +1,15 @@
 public class GreetingApp {
     public static void main(String[] args) {
 
-        String name;
-
-        // Check if user provided argument
+        // Default case
         if (args.length == 0) {
-            name = "World";
-        } else {
-            name = args[0]; // take first argument
+            System.out.println("Hello, World!");
+            return;
         }
 
-        System.out.println("Hello, " + name + "!");
+        // Join all names with comma
+        String names = String.join(", ", args);
+
+        System.out.println("Hello, " + names + "!");
     }
 }
