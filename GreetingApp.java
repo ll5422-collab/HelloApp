@@ -1,22 +1,25 @@
 public class GreetingApp {
     public static void main(String[] args) {
 
-        // Default greeting if no arguments
+        // If no arguments → default message
         if (args.length == 0) {
             System.out.println("Hello, World!");
             return;
         }
 
-        String result = "";
+        // Print greeting using enhanced for loop
+        System.out.print("Hello, ");
 
-        // Enhanced for loop to process names
+        int count = 0;
         for (String name : args) {
-            result += name + ", ";
+            count++;
+            if (count == args.length) {
+                System.out.print(name); // last name (no comma)
+            } else {
+                System.out.print(name + ", ");
+            }
         }
 
-        // Remove trailing comma and space using substring
-        result = result.substring(0, result.length() - 2);
-
-        System.out.println("Hello, " + result + "!");
+        System.out.println("!");
     }
 }
